@@ -5,7 +5,7 @@
     <StackLayout
         Padding="10,20,10,10"
         Spacing="5">
-        <Label x:Name="lblMessage" Text="OnTextChanged" HorizontalTextAlignment="Center" />
+        <Label Text="OnTextChanged" HorizontalTextAlignment="Center" />
         <SearchBar 
             x:Name="search"
             Placeholder="Search car maker"

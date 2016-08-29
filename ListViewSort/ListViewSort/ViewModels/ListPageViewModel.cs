@@ -22,7 +22,7 @@ namespace ListViewSort.ViewModels
             Car = new CarModel();
         }
 
-        //Field 
+        //Field and property for car.
         private CarModel _car;
         public CarModel Car
         {
@@ -37,22 +37,7 @@ namespace ListViewSort.ViewModels
             }
         }
 
-        // Message
-        private string _message;
-        public string Message
-        {
-            get
-            {
-                return _message;
-            }
-            set
-            {
-                _message = value;
-                OnPropertyChanged();
-            }
-        }
-
-        //Property and field for an obserable collection / List for personmodel objects.
+        //Property and field for an obserable collection / List for personmodel objects. Holds the most current list and binds it with the view.
         private ObservableCollection<CarModel> _carObserveList = new ObservableCollection<CarModel>();
         public ObservableCollection<CarModel> CarObserveList
         {
@@ -74,7 +59,7 @@ namespace ListViewSort.ViewModels
             return tempList;
         }
 
-        //Command for when user presses item in persons listview. 
+        //Command for when text changes in searchbar.
         private Command _onTextChangedCommand;
         public ICommand OnTextChangedCommand
         {
@@ -89,7 +74,7 @@ namespace ListViewSort.ViewModels
             }
         }
 
-        //This method executes when a user has pressed something in the persons listview. 
+        //This method executes from the OnTextChangeCommand and sets the values in the bindinglist.
         private void HandleOnTextChanged(object parameter)
         {
             string searchWord = parameter as string;
