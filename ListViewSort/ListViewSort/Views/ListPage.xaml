@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListViewSort.Views.ListPage">
+    <StackLayout
+        Padding="10,20,10,10"
+        Spacing="5">
+        <Label x:Name="lblMessage" Text="OnTextChanged" HorizontalTextAlignment="Center" />
+        <SearchBar 
+            x:Name="search"
+            Placeholder="Search"
+            TextChanged="SearchBarOnTextChanged"/>            
+        <ListView
+            ItemsSource="{Binding CarObserveList}"
+            HasUnevenRows="True"
+            VerticalOptions="FillAndExpand"
+            BackgroundColor="#262626"
+            SeparatorColor="#4ca6ff">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                                Padding="5"
+                                Spacing="5"
+                                VerticalOptions="FillAndExpand"
+                                Orientation="Vertical">
+                            <StackLayout
+                                Orientation="Horizontal">
+                                <Label Text="Make: " />
+                                <Label Text="{Binding Make}" />
+                            </StackLayout>
+                            <StackLayout
+                                Orientation="Horizontal">
+                                <Label Text="Type of car: " />
+                                <Label Text="{Binding TypeOfCar}" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Year: " />
+                                <Label Text="{Binding Year}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
